@@ -1,4 +1,4 @@
 data/
 .vscode/
 __pycache__
-vit_cifar10.pth
+vit_cifar10/
