@@ -136,6 +136,9 @@ def main():
     parser = create_argument_parser()
     args = parser.parse_args()
 
+    checkpoint_dir = Path(args.checkpoint_path)
+    checkpoint_dir.parent.mkdir(parents=True, exist_ok=True)
+
     device = select_device(args.device)
     torch.device(device)
     print(f"Using device {device}")
@@ -167,8 +170,6 @@ def main():
 
 
 if __name__ == "__main__":
-    checkpoint_dir = Path("checkpoints")
-    checkpoint_dir.mkdir(exist_ok=True)
     main()
 
 
